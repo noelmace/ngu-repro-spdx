@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run ngu-repro-spdx:serve-ssr",
+    "serve:ssr": "node dist/ngu-repro-spdx/server/main.js",
+    "build:ssr": "ng build --prod && ng run ngu-repro-spdx:server:production",
+    "prerender": "ng run ngu-repro-spdx:prerender"
   },
   "private": true,
   "dependencies": {
@@ -18,7 +22,12 @@
     "@angular/forms": "~9.1.4",
     "@angular/platform-browser": "~9.1.4",
     "@angular/platform-browser-dynamic": "~9.1.4",
+    "@angular/platform-server": "~9.1.4",
     "@angular/router": "~9.1.4",
+    "@nguniversal/express-engine": "^9.1.0",
+    "dd-trace": "^0.20.1",
+    "express": "^4.15.2",
+    "graphql": "^15.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -28,6 +37,8 @@
     "@angular/cli": "~9.1.4",
     "@angular/compiler-cli": "~9.1.4",
     "@angular/language-service": "~9.1.4",
+    "@nguniversal/builders": "^9.1.0",
+    "@types/express": "^4.17.0",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
